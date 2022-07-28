@@ -1,19 +1,24 @@
 @import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
 
 :root {
+  /* 定义变量 */
   --line-border-fill: #3498db;
   --line-border-empty: #e0e0e0;
 }
 
 * {
+  /* 设置盒子模型 */
   box-sizing: border-box;
 }
 
 body {
   background-color: #f6f7fb;
   font-family: 'Muli', sans-serif;
+  /* 弹性布局 */
   display: flex;
+  /* 把 body 的子元素设置为一个组，然后对组内的元素进行居中 */
   align-items: center;
+  /* 水平居中 */
   justify-content: center;
   height: 100vh;
   overflow: hidden;
@@ -21,11 +26,13 @@ body {
 }
 
 .container {
+  /* 行内居中 */
   text-align: center;
 }
 
 .progress-container {
   display: flex;
+  /* flex 布局中 均匀排列每个元素，首个元素放置于起点，末尾元素放置于终点*/
   justify-content: space-between;
   position: relative;
   margin-bottom: 30px;
@@ -33,12 +40,14 @@ body {
   width: 350px;
 }
 
+/* 利用伪元素来构造背景线 */
 .progress-container::before {
   content: '';
   background-color: var(--line-border-empty);
   position: absolute;
   top: 50%;
   left: 0;
+  /* 垂直居中 */
   transform: translateY(-50%);
   height: 4px;
   width: 100%;
