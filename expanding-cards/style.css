@@ -6,6 +6,7 @@
 
 body {
   font-family: 'Muli', sans-serif;
+  /* flex 布局 */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -20,17 +21,22 @@ body {
 }
 
 .panel {
+  /* 铺面页面 */
   background-size: cover;
+  /* 图像居中*/
   background-position: center;
+  /* 不重复 */
   background-repeat: no-repeat;
   height: 80vh;
   border-radius: 50px;
   color: #fff;
   cursor: pointer;
+  /* 弹性宽度 */
   flex: 0.5;
   margin: 10px;
   position: relative;
-  -webkit-transition: all 700ms ease-in;
+  /* 过度，all 所有动作 执行 700ms*/
+  transition: all 700ms ease-in;
 }
 
 .panel h3 {
@@ -39,23 +45,30 @@ body {
   bottom: 20px;
   left: 20px;
   margin: 0;
+  /* 不显示 */
   opacity: 0;
 }
 
+/* 一个标签上拥有两个类名 */
 .panel.active {
+  /* 弹性宽度 */
   flex: 5;
 }
 
 .panel.active h3 {
+  /* 显示 */
   opacity: 1;
+  /* 不透明度进行动画过渡 */
   transition: opacity 0.3s ease-in 0.4s;
 }
 
+/* 当小于最大宽度时 */
 @media (max-width: 480px) {
   .container {
     width: 100vw;
   }
 
+  /* 隐藏最后两个图片 */
   .panel:nth-of-type(4),
   .panel:nth-of-type(5) {
     display: none;
