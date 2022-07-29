@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        :root {
+            --left-bg-color: rgba(87, 84, 236, 0.7);
+            --right-bg-color: rgba(43, 43, 43, 0.8);
+            --left-btn-hover-color: rgba(87, 84, 236, 1);
+            --right-btn-hover-color: rgba(28, 122, 28, 1);
+            --hover-width: 75%;
+            --other-width: 25%;
+            --speed: 1000ms;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            overflow: hidden;
+            margin: 0
+        }
+
+        h1 {
+            /* rem 根元素 font-size 大小 */
+            font-size: 4rem;
+            color: #fff;
+            position: absolute;
+            /* 定位到中间的位置 */
+            left: 50%;
+            top: 20%;
+            transform: translateX(-50%);
+            /* 处理空白 换行符 空格 制表符合并 文字不换行 行尾空格删除*/
+            white-space: nowrap;
+        }
+
+        .btn {
+            position: absolute;
+
+            /* 文字居中 效果和下面三行效果一样 */
+            /*text-align: center;*/
+
+            /* 文字居中 */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            left: 50%;
+            top: 40%;
+            transform: translateX(-50%);
+            /* 取消 a 标签的下划线 */
+            text-decoration: none;
+            color: #fff;
+            border: #fff solid 0.2rem;
+            font-size: 1rem;
+            font-weight: bold;
+            /* 大写 */
+            text-transform: uppercase;
+            width: 15rem;
+            padding: 1.5rem;
+        }
+
+        .split.left .btn:hover {
+            background-color: var(--left-btn-hover-color);
+            border-color: var(--left-btn-hover-color);
+        }
+
+        .split.right .btn:hover {
+            background-color: var(--right-btn-hover-color);
+            border-color: var(--right-btn-hover-color);
+        }
+
+        .container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            background-color: #333;
+        }
+
+        .split {
+            position: absolute;
+            /* 从中间分为一半 */
+            width: 50%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .split.left{
+            left: 0;
+            /* 设置背景图 */
+            background-image: url('../ps.jpg');
+            /* 设置不重复 */
+            background-repeat: no-repeat;
+            /* 设置为缩放覆盖 */
+            background-size: cover;
+        }
+
+        /* 增加了一层蒙版 */
+        .split.left::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: var(--left-bg-color);
+        }
+
+        .split.right {
+            right: 0;
+            background-image: url('../xbox.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .split.right::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: var(--right-bg-color);
+        }
+
+        .split.right,
+        .split.left,
+        .split.right::before,
+        .split.left::before {
+            /* 设置变化速度 */
+            transition: all var(--speed) ease-in-out;
+        }
+
+        /* 设置 hover 的宽度样式 */
+        .hover-left .left {
+            width: var(--hover-width);
+        }
+
+        .hover-left .right {
+            width: var(--other-width);
+        }
+
+        .hover-right .right {
+            width: var(--hover-width);
+        }
+
+        .hover-right .left {
+            width: var(--other-width);
+        }
+
+        @media (max-width: 800px) {
+            h1 {
+                font-size: 2rem;
+                top: 30%;
+            }
+
+            .btn {
+                padding: 1.2rem;
+                width: 12rem;
+            }
+        }
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="split left">
+        <h1>Playstation 5</h1>
+        <a href="#" class="btn">Buy Now</a>
+    </div>
+    <div class="split right">
+        <h1>XBox Series X</h1>
+        <a href="#" class="btn">Buy Now</a>
+    </div>
+</div>
+<script>
+const left = document.querySelector('.left')
+const right = document.querySelector('.right')
+const container = document.querySelector('.container')
+
+// 添加鼠标进入事件
+left.addEventListener('mouseenter', () => container.classList.add('hover-left'))
+// 添加鼠标移出事件
+left.addEventListener('mouseleave', () => container.classList.remove('hover-left'))
+right.addEventListener('mouseenter', () => container.classList.add('hover-right'))
+right.addEventListener('mouseleave', () => container.classList.remove('hover-right'))
+</script>
+</body>
+</html>
