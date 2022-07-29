@@ -8,11 +8,12 @@ This is the main repository for all of the projects in the course.
 
 |   #   | Project                                                      | Live Demo                                                                         | practiced |
 |:-----:|--------------------------------------------------------------|-----------------------------------------------------------------------------------|-----------|
-|   01  | [Expanding Cards](expanding-cards)                           | [Live Demo](https://50projects50days.com/projects/expanding-cards/)               | ✅         |
-|   02  | [Progress Steps](progress-steps)                             | [Live Demo](https://50projects50days.com/projects/progress-steps/)                | ✅         |
-|   03  | [Rotating Navigation Animation](rotating-nav-animation)      | [Live Demo](https://50projects50days.com/projects/rotating-navigation-animation/) | ✅         |
-|   04  | [Hidden Search Widget](hidden-search)                        | [Live Demo](https://50projects50days.com/projects/hidden-search-widget/)          | ✅         |
-|   06  | [Scroll Animation](scroll-animation)                         | [Live Demo](https://50projects50days.com/projects/scroll-animation/)              | ✅         |
+|   01  | [Expanding Cards](expanding-cards)                           | [Live Demo](https://50projects50days.com/projects/expanding-cards/)               | ✅        |
+|   02  | [Progress Steps](progress-steps)                             | [Live Demo](https://50projects50days.com/projects/progress-steps/)                | ✅        |
+|   03  | [Rotating Navigation Animation](rotating-nav-animation)      | [Live Demo](https://50projects50days.com/projects/rotating-navigation-animation/) | ✅        |
+|   04  | [Hidden Search Widget](hidden-search)                        | [Live Demo](https://50projects50days.com/projects/hidden-search-widget/)          | ✅        |
+|   05  | [Blurry Loading](blurry-loading)                             | [Live Demo](https://50projects50days.com/projects/blurry-loading/)                |           |
+|   06  | [Scroll Animation](scroll-animation)                         | [Live Demo](https://50projects50days.com/projects/scroll-animation/)              | ✅        |
 |   07  | [Split Landing Page](split-landing-page)                     | [Live Demo](https://50projects50days.com/projects/split-landing-page/)            |           |
 |   08  | [Form Wave](form-input-wave)                                 | [Live Demo](https://50projects50days.com/projects/form-wave/)                     |           |
 |   09  | [Sound Board](sound-board)                                   | [Live Demo](https://50projects50days.com/projects/sound-board/)                   |           |
