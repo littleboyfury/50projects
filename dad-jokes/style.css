@@ -30,6 +30,7 @@ body {
 h3 {
   margin: 0;
   opacity: 0.5;
+  /* 设置字符间距 */
   letter-spacing: 2px;
 }
 
@@ -53,6 +54,7 @@ h3 {
 }
 
 .btn:active {
+  /* 缩放动画 */
   transform: scale(0.98);
 }
 

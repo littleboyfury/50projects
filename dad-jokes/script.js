@@ -13,6 +13,7 @@ async function generateJoke() {
     },
   }
 
+  // fetch 发送 http 请求
   const res = await fetch('https://icanhazdadjoke.com', config)
 
   const data = await res.json()
