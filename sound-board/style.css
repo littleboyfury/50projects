@@ -8,6 +8,7 @@ body {
   background-color: rgb(161, 100, 223);
   font-family: 'Poppins', sans-serif;
   display: flex;
+  /* 表示设置单行还是多行，多行表示堆叠方向，下面表示适应父级元素排列 */
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
