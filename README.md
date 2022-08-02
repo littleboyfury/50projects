@@ -19,7 +19,7 @@ This is the main repository for all of the projects in the course.
 |   09  | [Sound Board](sound-board)                                   | [Live Demo](https://50projects50days.com/projects/sound-board/)                   | ✅        |
 |   10  | [Dad Jokes](dad-jokes)                                       | [Live Demo](https://50projects50days.com/projects/dad-jokes/)                     | ✅        |
 |   11  | [Event Keycodes](event-keycodes)                             | [Live Demo](https://50projects50days.com/projects/event-keycodes/)                | ✅        |
-|   12  | [Faq Collapse](faq-collapse)                                 | [Live Demo](https://50projects50days.com/projects/faq-collapse/)                  |           |
+|   12  | [Faq Collapse](faq-collapse)                                 | [Live Demo](https://50projects50days.com/projects/faq-collapse/)                  | ✅        |
 |   13  | [Random Choice Picker](random-choice-picker)                 | [Live Demo](https://50projects50days.com/projects/random-choice-picker/)          |           |
 |   14  | [Animated Navigation](animated-navigation)                   | [Live Demo](https://50projects50days.com/projects/animated-navigation/)           |           |
 |   15  | [Incrementing Counter](incrementing-counter)                 | [Live Demo](https://50projects50days.com/projects/incrementing-counter/)          |           |
