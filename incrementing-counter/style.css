@@ -29,6 +29,7 @@ body {
   margin-top: 10px;
 }
 
+/* 当宽度小于 580，改为竖排 */
 @media (max-width: 580px) {
   body {
     flex-direction: column;
