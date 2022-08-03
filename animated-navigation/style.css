@@ -6,6 +6,7 @@
 
 body {
   background-color: #eafbff;
+  /* 设置渐变颜色 */
   background-image: linear-gradient(
     to bottom,
     #eafbff 0%,
@@ -85,6 +86,7 @@ nav ul a {
 
 .icon .line {
   background-color: #5290f9;
+  /* 形成一条线 */
   height: 2px;
   width: 20px;
   position: absolute;
@@ -95,13 +97,16 @@ nav ul a {
 
 .icon .line2 {
   top: auto;
+  /* 将其中一条线移动下来 */
   bottom: 10px;
 }
 
 nav.active .icon .line1 {
+  /* 逆时针渲染 45度 Y 轴移动 5.5 px*/
   transform: rotate(-765deg) translateY(5.5px);
 }
 
 nav.active .icon .line2 {
+  /* 顺时针旋转 45度 */
   transform: rotate(765deg) translateY(-5.5px);
 }
