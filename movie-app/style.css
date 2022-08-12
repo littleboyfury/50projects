@@ -42,7 +42,9 @@ header {
 }
 
 main {
+  /* 把内部元素变为一行 */
   display: flex;
+  /* 堆叠方向，根据宽度自动换行 */
   flex-wrap: wrap;
   justify-content: center;
 }
@@ -53,6 +55,7 @@ main {
   background-color: var(--secondary-color);
   box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
   position: relative;
+  /* 隐藏overview */
   overflow: hidden;
   border-radius: 3px;
 }
