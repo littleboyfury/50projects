@@ -22,8 +22,8 @@ This is the main repository for all of the projects in the course.
 |   12  | [Faq Collapse](faq-collapse)                                 | [Live Demo](https://50projects50days.com/projects/faq-collapse/)                  | ✅        |
 |   13  | [Random Choice Picker](random-choice-picker)                 | [Live Demo](https://50projects50days.com/projects/random-choice-picker/)          | ✅        |
 |   14  | [Animated Navigation](animated-navigation)                   | [Live Demo](https://50projects50days.com/projects/animated-navigation/)           | ✅        |
-|   15  | [Incrementing Counter](incrementing-counter)                 | [Live Demo](https://50projects50days.com/projects/incrementing-counter/)          |           |
-|   16  | [Drink Water](drink-water)                                   | [Live Demo](https://50projects50days.com/projects/drink-water/)                   |           |
+|   15  | [Incrementing Counter](incrementing-counter)                 | [Live Demo](https://50projects50days.com/projects/incrementing-counter/)          | ✅        |
+|   16  | [Drink Water](drink-water)                                   | [Live Demo](https://50projects50days.com/projects/drink-water/)                   | ✅        |
 |   17  | [Movie App](movie-app)                                       | [Live Demo](https://50projects50days.com/projects/movie-app/)                     |           |
 |   18  | [Background Slider](background-slider)                       | [Live Demo](https://50projects50days.com/projects/background-slider/)             |           |
 |   19  | [Theme Clock](theme-clock)                                   | [Live Demo](https://50projects50days.com/projects/theme-clock/)                   |           |
