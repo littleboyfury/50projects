@@ -25,7 +25,7 @@ This is the main repository for all of the projects in the course.
 |   15  | [Incrementing Counter](incrementing-counter)                 | [Live Demo](https://50projects50days.com/projects/incrementing-counter/)          | ✅        |
 |   16  | [Drink Water](drink-water)                                   | [Live Demo](https://50projects50days.com/projects/drink-water/)                   | ✅        |
 |   17  | [Movie App](movie-app)                                       | [Live Demo](https://50projects50days.com/projects/movie-app/)                     | ✅        |
-|   18  | [Background Slider](background-slider)                       | [Live Demo](https://50projects50days.com/projects/background-slider/)             |           |
+|   18  | [Background Slider](background-slider)                       | [Live Demo](https://50projects50days.com/projects/background-slider/)             | ✅        |
 |   19  | [Theme Clock](theme-clock)                                   | [Live Demo](https://50projects50days.com/projects/theme-clock/)                   |           |
 |   20  | [Button Ripple Effect](button-ripple-effect)                 | [Live Demo](https://50projects50days.com/projects/button-ripple-effect/)          |           |
 |   21  | [Drag N Drop](drag-n-drop)                                   | [Live Demo](https://50projects50days.com/projects/drag-n-drop/)                   |           |
