@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Heebo:300&display=swap');
+
+        * {
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #000;
+            --secondary-color: #fff;
+        }
+
+        html {
+            transition: all 0.5s ease-in;
+        }
+
+        html.dark {
+        }
+
+        html.dark {
+            --primary-color: #fff;
+            --secondary-color: #333;
+            background-color: #111;
+            color: var(--primary-color);
+        }
+
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+            margin: 0;
+        }
+
+        .toggle {
+            cursor: pointer;
+            background-color: var(--primary-color);
+            color: var(--secondary-color);
+            border: 0;
+            border-radius: 4px;
+            padding: 8px 12px;
+            position: absolute;
+            top: 100px;
+        }
+
+        .toggle:focus {
+            outline: none;
+        }
+
+        .clock-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .clock {
+            position: relative;
+            width: 200px;
+            height: 200px;
+        }
+
+        .needle {
+            background-color: var(--primary-color);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            height: 65px;
+            width: 3px;
+            transform-origin: bottom center;
+            transition: all 0.5s ease-in;
+        }
+
+        .needle.hour {
+            transform: translate(-50%, -100%) rotate(0deg);
+        }
+
+        .needle.minute {
+            transform: translate(-50%, -100%) rotate(0deg);
+            height: 100px;
+        }
+
+        .needle.second {
+            height: 100px;
+            background-color: #e74c3c;
+            transform: translate(-50%, -100%) rotate(0deg);
+        }
+
+        .center-point {
+            background-color: #e74c3c;
+            width: 10px;
+            height: 10px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+        }
+
+        .center-point::after {
+            content: '';
+            background-color: var(--primary-color);
+            width: 5px;
+            height: 5px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+        }
+
+        .time {
+            font-size: 60px;
+        }
+
+        .date {
+            color: #aaa;
+            font-size: 14px;
+            letter-spacing: 0.3px;
+            text-transform: uppercase;
+        }
+
+        .date .circle {
+            background-color: var(--primary-color);
+            color: var(--secondary-color);
+            border-radius: 50%;
+            height: 18px;
+            width: 18px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            line-height: 18px;
+            transition: all 0.5s ease-in;
+            font-size: 12px;
+        }
+
+
+    </style>
+</head>
+<body>
+<button class="toggle">Dark mode</button>
+<div class="clock-container">
+    <div class="clock">
+        <div class="needle hour"></div>
+        <div class="needle minute"></div>
+        <div class="needle second"></div>
+        <div class="center-point"></div>
+    </div>
+
+    <div class="time"></div>
+    <div class="date"></div>
+</div>
+<script>
+  const hourEl = document.querySelector('.hour')
+  const minuteEl = document.querySelector('.minute')
+  const secondEl = document.querySelector('.second')
+  const timeEl = document.querySelector('.time')
+  const dateEl = document.querySelector('.date')
+  const toggle = document.querySelector('.toggle')
+  const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+  const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+  const button = document.getElementById('button')
+
+  toggle.addEventListener('click', (e) => {
+    const html = document.querySelector('html')
+    if (html.classList.contains('dark')) {
+      html.classList.remove('dark')
+      e.target.innerHTML = 'Dark mode'
+    } else {
+      html.classList.add('dark')
+      e.target.innerHTML = 'Light mode'
+    }
+  })
+
+  function setTime() {
+    const time = new Date()
+    const month = time.getMonth()
+    const day = time.getDay()
+    const date = time.getDate()
+    const hours = time.getHours()
+    const hoursForClock = hours >= 12 ? hours % 12 : hours
+    const minutes = time.getMinutes()
+    const seconds = time.getSeconds()
+    const ampm = hours >= 12 ? 'PM' : 'AM'
+
+    if (seconds === 0) {
+      // 这样设置可以指针不会转，但是问题是，59 到 60 秒是，指针是直接过去的，没有动画效果
+      secondEl.style.transition = 'none'
+      secondEl.style.transform = `translate(-50%, -100%) rotate(0deg)`
+      // 回流
+      secondEl.clientHeight
+      secondEl.style.transition = 'all 0.5s ease-in'
+    } else {
+      secondEl.style.transform = `translate(-50%, -100%) rotate(${scale(seconds, 0, 60, 0, 360)}deg)`
+    }
+
+    if (minutes === 0) {
+      minuteEl.style.transition = 'none'
+      minuteEl.style.transform = `translate(-50%, -100%) rotate(0deg)`
+      minuteEl.clientHeight
+      minuteEl.style.transition = 'all 0.5s ease-in'
+    } else {
+      minuteEl.style.transform = `translate(-50%, -100%) rotate(${scale(minutes, 0, 60, 0, 360)}deg)`
+    }
+
+    if (hoursForClock === 0) {
+      hourEl.style.transition = 'none'
+      hourEl.style.transform = `translate(-50%, -100%) rotate(0deg)`
+      hourEl.clientHeight
+      hourEl.style.transition = 'all 0.5s ease-in'
+    } else {
+      hourEl.style.transform = `translate(-50%, -100%) rotate(${scale(hoursForClock, 0, 12, 0, 360)}deg)`
+    }
+
+    timeEl.innerHTML = `${hoursForClock}:${minutes < 10 ? `0${minutes}` : minutes}:${seconds} ${ampm}`
+    dateEl.innerHTML = `${days[day]}, ${months[month]} <span class="circle">${date}</span>`
+  }
+
+  /**
+   * 把一个范围的值转化为对应的角度
+   * @param num 当前值
+   * @param in_min 输入的最小值，比如分钟，则是 0
+   * @param in_max 输入的最大值，比如分钟，则是 60
+   * @param out_min 输出的最小值，比如度数，则是 0
+   * @param out_max 输出的最大值，比如度数，则是 360
+   * @returns {*}
+   */
+  function scale(num, in_min, in_max, out_min, out_max) {
+    return (num - in_min) * (out_max - out_min) / (in_max - in_min) + out_min
+  }
+
+  setTime()
+  setInterval(setTime, 1000)
+</script>
+</body>
+</html>
